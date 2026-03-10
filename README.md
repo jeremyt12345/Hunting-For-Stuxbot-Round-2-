@@ -12,3 +12,8 @@ This returned results showing a file named Rubeus.exe dropped to C:\Users\Public
 
 
 <img width="1847" height="571" alt="image" src="https://github.com/user-attachments/assets/11e443ab-f18c-4f6b-98d0-94a6dc90b58d" />
+
+
+Q2 "Create a KQL query to hunt for "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder". Enter the content of the registry.value field in the document that is related to the first registry-based persistence action as your answer."
+
+Thinking through this one my first thought is that I should look through the event ID's and check which ones would require something starting or being set so that would be Event ID 13(Registry Value Set).
