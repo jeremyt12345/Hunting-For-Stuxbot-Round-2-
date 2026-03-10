@@ -17,3 +17,11 @@ This returned results showing a file named Rubeus.exe dropped to C:\Users\Public
 Q2 "Create a KQL query to hunt for "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder". Enter the content of the registry.value field in the document that is related to the first registry-based persistence action as your answer."
 
 Thinking through this one my first thought is that I should look through the event ID's and check which ones would require something starting or being set so that would be Event ID 13(Registry Value Set).
+
+Then I tried to enter the query "event.code:13 AND registry.path"  but that returned nothing so with the help of ai I got "event.code:13 AND registry.path:*Run*"
+
+
+Then I found 13 hits and had to go throguh each until I found the answer
+
+
+<img width="1482" height="119" alt="image" src="https://github.com/user-attachments/assets/4b13b7a4-dee3-483d-882a-696928cc52d3" />
