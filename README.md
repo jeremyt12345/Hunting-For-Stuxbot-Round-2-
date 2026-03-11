@@ -25,3 +25,13 @@ Then I found 13 hits and had to go throguh each until I found the answer
 
 
 <img width="1482" height="119" alt="image" src="https://github.com/user-attachments/assets/4b13b7a4-dee3-483d-882a-696928cc52d3" />
+
+
+
+Q3 "Create a KQL query to hunt for "PowerShell Remoting for Lateral Movement". Enter the content of the winlog.user.name field in the document that is related to PowerShell remoting-based lateral movement towards DC1"
+
+
+From this I had to find out what event ID would be for "Powershell Remoting for Lateral Movement" initally I thought it was Event ID 41 PowerShell Script logging but its actually Event ID 3 Network Connections. For the second half of the query I use "destination.port:5985" Why are we using destination port? Well Powershell remotting happens from WinRM and WinRM runs on port 5985. So our query is "event.code:3 AND destination.port:5985"
+
+<img width="739" height="42" alt="image" src="https://github.com/user-attachments/assets/e3302639-f1fc-4280-9950-10bec79970db" />
+
